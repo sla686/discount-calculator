@@ -103,13 +103,15 @@
   border-radius: 5px;
   padding: 20px;
   text-align: center;
+  overflow: auto;
 }
 
-.result {
+.discounted {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   border: solid 1px steelblue;
   border-radius: 5px;
   padding: 20px;
   text-align: center;
+  overflow: auto;
 }
