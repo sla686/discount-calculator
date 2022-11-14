@@ -52,7 +52,7 @@ const Criteria = ({
         <h2>Criteria</h2>
         <form onSubmit={onSubmit} className="form-container">
           <div>
-            <label htmlFor="sales">Amount of sales in the past</label>
+            <label htmlFor="sales">Amount of sales in the past </label>
             <input
               type="number"
               className="input-text"
@@ -65,7 +65,7 @@ const Criteria = ({
             />
           </div>
           <div>
-            <label htmlFor="month">Time of the year</label>
+            <label htmlFor="month">Time of the year </label>
             <select
               name="month"
               onChange={(e: ChangeEvent<HTMLSelectElement>) =>
@@ -88,7 +88,7 @@ const Criteria = ({
             </select>
           </div>
           <div>
-            <label htmlFor="special">Special deal (%)</label>
+            <label htmlFor="special">Special deal (%) </label>
             <input
               type="number"
               className="input-text"
