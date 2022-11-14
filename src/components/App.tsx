@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { ClientType } from "../types/ClientType";
 import Clients from "./clients/Clients";
 import Criteria from "./criteria/Criteria";
 import Products from "./products/Products";
-import Result from "./result/Result";
+import DiscountedProducts from "./result/DiscountedProducts";
+import { ClientType } from "../types/ClientType";
 import { ProductType } from "../types/ProductType";
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
 
   const [clients, setClients] = useState<ClientType[]>(getInitialClients());
   const [products, setProducts] = useState<ProductType[]>(getInitialProducts());
+  const [chosenCriteria, setChosenCriteria] = useState<string[]>([]);
 
   useEffect(() => {
     const temp = JSON.stringify(clients);
@@ -65,6 +66,12 @@ const App = () => {
     }
   };
 
+  const criteriaChange = (id: string) => {
+    chosenCriteria.indexOf(id) !== -1
+      ? setChosenCriteria(chosenCriteria.filter((item) => item !== id))
+      : setChosenCriteria([...chosenCriteria, id].sort());
+  };
+
   return (
     <div className="container">
       <Clients clients={clients} addClient={addClient} delClient={onDelete} />
@@ -73,8 +80,8 @@ const App = () => {
         addProduct={addProduct}
         delProduct={onDelete}
       />
-      <Criteria />
-      <Result />
+      <Criteria handleChange={criteriaChange} />
+      <DiscountedProducts />
     </div>
   );
 };
