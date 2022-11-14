@@ -66,10 +66,14 @@ const App = () => {
     }
   };
 
-  const criteriaChange = (id: string) => {
-    chosenCriteria.indexOf(id) !== -1
-      ? setChosenCriteria(chosenCriteria.filter((item) => item !== id))
-      : setChosenCriteria([...chosenCriteria, id].sort());
+  // const criteriaChange = (id: string) => {
+  //   chosenCriteria.indexOf(id) !== -1
+  //     ? setChosenCriteria(chosenCriteria.filter((item) => item !== id))
+  //     : setChosenCriteria([...chosenCriteria, id].sort());
+  // };
+
+  const criteriaChange = (criteria: string[]) => {
+    setChosenCriteria(criteria);
   };
 
   return (
@@ -80,8 +84,8 @@ const App = () => {
         addProduct={addProduct}
         delProduct={onDelete}
       />
-      <Criteria handleChange={criteriaChange} />
-      <DiscountedProducts />
+      <Criteria formCriteria={criteriaChange} />
+      <DiscountedProducts products={products} chosenCriteria={chosenCriteria} />
     </div>
   );
 };
