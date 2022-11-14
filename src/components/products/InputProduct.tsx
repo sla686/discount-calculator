@@ -37,6 +37,8 @@ const InputProduct = ({
           setInputPrice(e.target.value)
         }
         name="price"
+        min="0"
+        step="0.01"
       />
       <input type="submit" className="btn" value={"Add new client"} />
     </form>
