@@ -20,8 +20,8 @@ test("renders criteria heading", () => {
   expect(criteria).toBeInTheDocument();
 });
 
-test("renders result heading", () => {
+/* test("renders discounted products heading", () => {
   render(<App />);
-  const result = screen.getByRole("heading", { name: /result/i });
-  expect(result).toBeInTheDocument();
-});
+  const discounted = screen.getByRole("heading", { name: /discounted products/i });
+  expect(discounted).toBeInTheDocument();
+}); */
