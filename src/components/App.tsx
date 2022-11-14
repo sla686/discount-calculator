@@ -48,10 +48,31 @@ const App = () => {
     setProducts([...products, newProduct]);
   };
 
+  const onDelete = (id: string, type: string) => {
+    switch (type) {
+      case "product":
+      case "products":
+        setProducts([...products.filter((product) => product.id !== id)]);
+        break;
+
+      case "client":
+      case "clients":
+        setClients([...clients.filter((client) => client.id !== id)]);
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="container">
-      <Clients clients={clients} addClient={addClient} />
-      <Products products={products} addProduct={addProduct} />
+      <Clients clients={clients} addClient={addClient} delClient={onDelete} />
+      <Products
+        products={products}
+        addProduct={addProduct}
+        delProduct={onDelete}
+      />
       <Criteria />
       <Result />
     </div>
