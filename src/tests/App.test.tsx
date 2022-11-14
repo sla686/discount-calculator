@@ -10,7 +10,7 @@ test("renders clients heading", () => {
 
 test("renders products heading", () => {
   render(<App />);
-  const products = screen.getByRole("heading", { name: /products/i });
+  const products = screen.getByRole("heading", { name: "Products" });
   expect(products).toBeInTheDocument();
 });
 
@@ -20,8 +20,10 @@ test("renders criteria heading", () => {
   expect(criteria).toBeInTheDocument();
 });
 
-/* test("renders discounted products heading", () => {
+test("renders discounted products heading", () => {
   render(<App />);
-  const discounted = screen.getByRole("heading", { name: /discounted products/i });
+  const discounted = screen.getByRole("heading", {
+    name: /discounted products/i,
+  });
   expect(discounted).toBeInTheDocument();
-}); */
+});
