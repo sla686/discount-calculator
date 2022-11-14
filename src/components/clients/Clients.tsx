@@ -1,4 +1,4 @@
-import { ClientType } from "../types/ClientType";
+import { ClientType } from "../../types/ClientType";
 import Client from "./Client";
 import InputClient from "./InputClient";
 

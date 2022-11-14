@@ -1,4 +1,4 @@
-import { ProductType } from "../types/ProductType";
+import { ProductType } from "../../types/ProductType";
 import { FaTimesCircle } from "react-icons/fa";
 
 const Product = ({

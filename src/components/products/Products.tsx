@@ -1,4 +1,4 @@
-import { ProductType } from "../types/ProductType";
+import { ProductType } from "../../types/ProductType";
 import InputProduct from "./InputProduct";
 import Product from "./Product";
 

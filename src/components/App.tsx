@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { ClientType } from "../types/ClientType";
-import Clients from "./Clients";
-import Criteria from "./Criteria";
-import Products from "./Products";
-import Result from "./Result";
+import Clients from "./clients/Clients";
+import Criteria from "./criteria/Criteria";
+import Products from "./products/Products";
+import Result from "./result/Result";
 import { ProductType } from "../types/ProductType";
 
 const App = () => {

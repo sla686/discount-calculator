@@ -1,4 +1,4 @@
-import { ClientType } from "../types/ClientType";
+import { ClientType } from "../../types/ClientType";
 import { FaTimesCircle } from "react-icons/fa";
 
 const Client = ({
