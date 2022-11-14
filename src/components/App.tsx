@@ -80,6 +80,12 @@ const App = () => {
   const onClick = (id: string) => {
     clients.forEach((client) => {
       if (client.id === id) {
+        if (client.selected) {
+          client.selected = false;
+        } else {
+          clients.forEach((client) => (client.selected = false));
+          client.selected = true;
+        }
         setSelectedClient(client);
       }
     });

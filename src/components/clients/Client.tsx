@@ -12,7 +12,12 @@ const Client = ({
 }) => {
   return (
     <>
-      <div className="client" onClick={() => onClick(client.id)}>
+      <div
+        className={`client ${client.selected ? "selected" : ""}`}
+        onClick={(e) => {
+          onClick(client.id);
+        }}
+      >
         <h3>{client.name}</h3>
         <FaTimesCircle
           className="circle"

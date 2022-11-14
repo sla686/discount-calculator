@@ -115,3 +115,7 @@
   text-align: center;
   overflow: auto;
 }
+
+.selected {
+  background-color: green;
+}
