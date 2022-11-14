@@ -2,20 +2,26 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../components/App";
 
-test("renders clients", () => {
+test("renders clients heading", () => {
   render(<App />);
-  const clients = screen.getByText(/clients/i);
+  const clients = screen.getByRole("heading", { name: /clients/i });
   expect(clients).toBeInTheDocument();
 });
 
-test("renders criteria", () => {
+test("renders products heading", () => {
   render(<App />);
-  const criteria = screen.getByText(/criteria/i);
+  const products = screen.getByRole("heading", { name: /products/i });
+  expect(products).toBeInTheDocument();
+});
+
+test("renders criteria heading", () => {
+  render(<App />);
+  const criteria = screen.getByRole("heading", { name: /criteria/i });
   expect(criteria).toBeInTheDocument();
 });
 
-test("renders products", () => {
+test("renders result heading", () => {
   render(<App />);
-  const products = screen.getByText(/products/i);
-  expect(products).toBeInTheDocument();
+  const result = screen.getByRole("heading", { name: /result/i });
+  expect(result).toBeInTheDocument();
 });

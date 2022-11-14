@@ -1,5 +1,9 @@
 const Criteria = () => {
-  return <div className="criteria">Criteria</div>;
+  return (
+    <div className="criteria">
+      <h2>Criteria</h2>
+    </div>
+  );
 };
 
 export default Criteria;
