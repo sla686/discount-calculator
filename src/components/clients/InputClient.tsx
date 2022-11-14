@@ -31,7 +31,7 @@ const InputClient = ({ addClient }: { addClient: (name: string) => void }) => {
         onChange={onChange}
         name="name"
       />
-      <input type="submit" className="btn btn-block" value={"Add new client"} />
+      <input type="submit" className="btn" value={"Add new client"} />
     </form>
   );
 };
