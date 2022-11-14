@@ -1,12 +1,15 @@
+import { ClientType } from "../../types/ClientType";
 import { ProductType } from "../../types/ProductType";
 import DiscountedProduct from "./DiscountedProduct";
 
 const DiscountedProducts = ({
   products,
   chosenCriteria,
+  selectedClient,
 }: {
   products: ProductType[];
   chosenCriteria: string[];
+  selectedClient: ClientType | undefined;
 }) => {
   return (
     <div className="discounted">
@@ -18,6 +21,7 @@ const DiscountedProducts = ({
               key={product.id}
               product={product}
               chosenCriteria={chosenCriteria}
+              selectedClient={selectedClient}
             />
           ))
         ) : (

@@ -21,6 +21,7 @@ const App = () => {
   const [clients, setClients] = useState<ClientType[]>(getInitialClients());
   const [products, setProducts] = useState<ProductType[]>(getInitialProducts());
   const [chosenCriteria, setChosenCriteria] = useState<string[]>([]);
+  const [selectedClient, setSelectedClient] = useState<ClientType>();
 
   useEffect(() => {
     const temp = JSON.stringify(clients);
@@ -76,16 +77,33 @@ const App = () => {
     setChosenCriteria(criteria);
   };
 
+  const onClick = (id: string) => {
+    clients.forEach((client) => {
+      if (client.id === id) {
+        setSelectedClient(client);
+      }
+    });
+  };
+
   return (
     <div className="container">
-      <Clients clients={clients} addClient={addClient} delClient={onDelete} />
+      <Clients
+        clients={clients}
+        addClient={addClient}
+        delClient={onDelete}
+        onClick={onClick}
+      />
       <Products
         products={products}
         addProduct={addProduct}
         delProduct={onDelete}
       />
       <Criteria formCriteria={criteriaChange} />
-      <DiscountedProducts products={products} chosenCriteria={chosenCriteria} />
+      <DiscountedProducts
+        products={products}
+        chosenCriteria={chosenCriteria}
+        selectedClient={selectedClient}
+      />
     </div>
   );
 };

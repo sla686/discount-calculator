@@ -6,10 +6,12 @@ const Clients = ({
   clients,
   addClient,
   delClient,
+  onClick,
 }: {
   clients: ClientType[];
   addClient: (name: string) => void;
   delClient: (id: string, type: string) => void;
+  onClick: (id: string) => void;
 }) => {
   return (
     <div className="clients">
@@ -17,7 +19,12 @@ const Clients = ({
       <InputClient addClient={addClient} />
       {clients.length > 0 ? (
         clients.map((client) => (
-          <Client key={client.id} client={client} delClient={delClient} />
+          <Client
+            key={client.id}
+            client={client}
+            delClient={delClient}
+            onClick={onClick}
+          />
         ))
       ) : (
         <p style={{ marginLeft: "10px" }}>No clients to show!</p>

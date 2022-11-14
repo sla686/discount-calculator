@@ -62,7 +62,6 @@ const Criteria = ({
               value={sales}
               name="sales"
               min="0"
-              max="100"
             />
           </div>
           <div>
